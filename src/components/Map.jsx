@@ -12,19 +12,19 @@ import { useEffect, useState } from 'react';
 import { useCities } from '../contexts/CitiesContext';
 import { useGeolocation } from '../hooks/useGeolocation';
 import Button from './Button';
+import { useUrlPosition } from '../hooks/useUrlPosition';
+import { flagemojiToPNG } from '../utils/flagemojuToPNG';
 
 function Map() {
     const { cities } = useCities();
     const [mapPosition, setMapPosition] = useState([40, 0]);
-    const [searchParams] = useSearchParams();
     const {
         isLoading: isLoadingPosition,
         position: geolocationPosition,
         getPosition,
     } = useGeolocation();
 
-    const mapLat = searchParams.get('lat');
-    const mapLng = searchParams.get('lng');
+    const [mapLat, mapLng] = useUrlPosition();
 
     useEffect(() => {
         if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
@@ -85,7 +85,6 @@ function DetectClick() {
 
     useMapEvents({
         click: (e) => {
-            console.log(e);
             navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
         },
     });
