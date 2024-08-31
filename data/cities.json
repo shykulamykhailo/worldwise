@@ -45,6 +45,28 @@
         "lat": "38.685509760012025",
         "lng": "-3.0541992187500004"
       }
+    },
+    {
+      "id": "45c8",
+      "cityName": "Coria",
+      "country": "Spain",
+      "emoji": {
+        "type": "img",
+        "key": null,
+        "ref": null,
+        "props": {
+          "src": "https://flagcdn.com/24x18/🇪🇸.png",
+          "alt": "flag"
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "date": "2024-08-31T19:41:44.405Z",
+      "notes": "11",
+      "position": {
+        "lat": "39.99395569397331",
+        "lng": "-6.525878906250001"
+      }
     }
   ]
 }
